@@ -1,15 +1,10 @@
-import { Users } from "@prisma/client";
-import { client } from "../database/prisma";
+import { client } from "../database/prisma.js";
+import { INewUser } from "../types/UserTypes.js";
 
-type NewUser = Omit<Users, "id">
+export async function createNewUser(userInfo: INewUser) {
+    return await client.users.create({ data: userInfo });
+}
 
-export async function createNewUser(userInfo: NewUser) {
-    const { email, password } = userInfo;
-
-    await client.users.create({
-        data: {
-            email,
-            password
-        }
-    });
+export async function getUserByEmail(queryEmail: string) {
+    return await client.users.findFirst({ where: { email: queryEmail } })
 }
