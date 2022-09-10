@@ -39,3 +39,17 @@ Este é o projeto número 19 feito pela Driven Education. Ele é uma API feita i
 ### Método DELETE /safeNote/:id:
 - Recebe a id da safeNote via params e o token de autorização no headers. Valida se a safeNote da id especificada pertence ao usuário do token enviado. Caso pertença, deleta a safeNote do banco de dados.
 - Retorna: status code 200
+
+## Rota Cards
+
+### Método POST /card:
+- Recebe: { title, number, name, CVC, expirationDate, isVirtual, type, password }, além do seu token no headers no formato Authorization: Bearer + token. Checa se você já tem algum card com este título e, caso contrário, cria a card
+- Retorna: status code 201
+
+### Método GET /cards:
+- Recebe o token de autorização no headers. Pode receber uma id na forma de query string, caso se queira receber apenas um card de um id específico. Nesse caso, valida se o card que tem esse id pertence ao usuário do token enviado no header.
+- Retorna: o card com o id especificado ou a lista dos cards do usuário.
+
+### Método DELETE /card/:id:
+- Recebe a id do card via params e o token de autorização no headers. Valida se o card da id especificada pertence ao usuário do token enviado. Caso pertença, deleta o card do banco de dados.
+- Retorna: status code 200

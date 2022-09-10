@@ -40,10 +40,10 @@ model SafeNotes {
 
 model Cards {
   id             Int      @id @default(autoincrement())
-  number         Int
+  number         String
   name           String
-  CVC            Int
-  expirationDate DateTime
+  CVC            String
+  expirationDate String
   password       String
   isVirtual      Boolean
   type           String

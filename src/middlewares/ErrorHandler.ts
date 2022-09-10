@@ -37,4 +37,13 @@ export default async function errorHandler(error: any, req: Request, res: Respon
     if (error.type === "error_noSafeNotes") {
         return res.status(404).send({ message: error.message });
     }
+    if(error.type === "error_card_notYours") {
+        return res.status(401).send({ message: error.message });
+    }
+    if (error.type === "error_invalidCardId") {
+        return res.status(404).send({ message: error.message });
+    }
+    if (error.type === "error_noCards") {
+        return res.status(404).send({ message: error.message });
+    }
 }
