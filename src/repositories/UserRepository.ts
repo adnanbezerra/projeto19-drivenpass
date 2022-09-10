@@ -8,3 +8,7 @@ export async function createNewUser(userInfo: INewUser) {
 export async function getUserByEmail(queryEmail: string) {
     return await client.users.findFirst({ where: { email: queryEmail } })
 }
+
+export async function getUserById(queryId: number) {
+    return await client.users.findFirst({ where: { id: queryId } });
+}

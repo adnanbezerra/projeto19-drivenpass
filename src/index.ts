@@ -14,10 +14,10 @@ const server = express();
 server.use(cors());
 server.use(express.json());
 
-server.use(CardsRouter);
-server.use(CredentialsRouter);
-server.use(SafeNotesRouter);
 server.use(UserRouter);
+server.use(CredentialsRouter);
+server.use(CardsRouter);
+server.use(SafeNotesRouter);
 server.use(WiFiRouter);
 server.use(errorHandler);
 

@@ -1,5 +1,5 @@
 import { Cards } from "@prisma/client";
-import { client } from "../database/prisma";
+import { client } from "../database/prisma.js";
 
 type NewCard = Omit<Cards, "id">;
 
@@ -12,9 +12,13 @@ export async function getCards() {
 }
 
 export async function getCardById(id: number) {
-    return client.cards.findFirst({ where: { id } })
+    return client.cards.findFirst({ where: { id: id } })
 }
 
 export async function deleteCardById(id: number) {
-    return client.cards.delete({ where: { id } })
+    return client.cards.delete({ where: { id: id } })
+}
+
+export async function getCardByTitleAndUserId(userId: number, title: string) {
+    return client.cards.findFirst({ where: { title: title, userId: userId } });
 }
