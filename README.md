@@ -53,3 +53,17 @@ Este é o projeto número 19 feito pela Driven Education. Ele é uma API feita i
 ### Método DELETE /card/:id:
 - Recebe a id do card via params e o token de autorização no headers. Valida se o card da id especificada pertence ao usuário do token enviado. Caso pertença, deleta o card do banco de dados.
 - Retorna: status code 200
+
+## Rota WiFi
+
+### Método POST /wifi:
+- Recebe: { title, name, password }, além do seu token no headers no formato Authorization: Bearer + token. Checa se você já tem algum WiFi com este título e, caso contrário, cria a WiFi
+- Retorna: status code 201
+
+### Método GET /wifis:
+- Recebe o token de autorização no headers. Pode receber uma id na forma de query string, caso se queira receber apenas uma WiFi de um id específico. Nesse caso, valida se a WiFi que tem esse id pertence ao usuário do token enviado no header.
+- Retorna: o card com o id especificado ou a lista dos cards do usuário.
+
+### Método DELETE /wifi/:id:
+- Recebe a id da WiFi via params e o token de autorização no headers. Valida se a WiFi da id especificada pertence ao usuário do token enviado. Caso pertença, deleta a WiFi do banco de dados.
+- Retorna: status code 200
