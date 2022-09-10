@@ -1,0 +1,24 @@
+import express from 'express';
+import 'express-async-errors';
+import dotenv from 'dotenv';
+import cors from 'cors';
+import { CardsRouter } from './routes/CardsRouter.js';
+import { CredentialsRouter } from './routes/CredentialsRouter.js';
+import { SafeNotesRouter } from './routes/SafeNotesRouter.js';
+import { UserRouter } from './routes/UserRouter.js';
+import { WiFiRouter } from './routes/WifiRouter.js';
+import errorHandler from './middlewares/ErrorHandler.js';
+dotenv.config();
+var server = express();
+server.use(cors());
+server.use(express.json());
+server.use(UserRouter);
+server.use(CredentialsRouter);
+server.use(CardsRouter);
+server.use(SafeNotesRouter);
+server.use(WiFiRouter);
+server.use(errorHandler);
+var PORT = process.env.PORT;
+server.listen(PORT, function () {
+    console.log("It's alive on port ".concat(PORT));
+});
