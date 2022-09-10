@@ -1,0 +1,1177 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "drivenpass",
+    "dateExported": "2022-09-10T23:08:58.315Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "dd954a81-3ed4-451e-9b7c-24aa135d8748",
+            "colId": "d568c029-4acf-4d2d-b53c-ad39612a873c",
+            "containerId": "",
+            "name": "post signup",
+            "url": "{{url}}/signup",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2022-09-10T19:14:59.271Z",
+            "modified": "2022-09-10T19:15:40.595Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"email\": \"lele@gmail.com\",\n  \"password\": \"dena\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "6d0bae1c-b349-4ff6-81a2-89b70919862f",
+            "colId": "d568c029-4acf-4d2d-b53c-ad39612a873c",
+            "containerId": "",
+            "name": "post signup with invalid data",
+            "url": "{{url}}/signup",
+            "method": "POST",
+            "sortNum": 13750,
+            "created": "2022-09-10T22:08:22.062Z",
+            "modified": "2022-09-10T22:09:14.853Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"email\": \"\",\n  \"password\": \"keke\"\n}",
+                "form": []
+            },
+            "tests": [
+                {
+                    "type": "res-code",
+                    "custom": "",
+                    "action": "equal",
+                    "value": "422"
+                }
+            ]
+        },
+        {
+            "_id": "9a7e2aec-932c-4ba1-915a-c1e2d79c3bca",
+            "colId": "d568c029-4acf-4d2d-b53c-ad39612a873c",
+            "containerId": "",
+            "name": "post signup repeated",
+            "url": "{{url}}/signup",
+            "method": "POST",
+            "sortNum": 15000,
+            "created": "2022-09-10T21:59:21.234Z",
+            "modified": "2022-09-10T22:08:05.392Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"email\": \"lele@gmail.com\",\n  \"password\": \"dena\"\n}",
+                "form": []
+            },
+            "tests": [
+                {
+                    "type": "res-code",
+                    "custom": "",
+                    "action": "equal",
+                    "value": "422"
+                }
+            ]
+        },
+        {
+            "_id": "ba96b278-8c74-414d-858c-dce2f5c1ef81",
+            "colId": "d568c029-4acf-4d2d-b53c-ad39612a873c",
+            "containerId": "",
+            "name": "post signin",
+            "url": "{{url}}/signin",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2022-09-10T19:16:51.092Z",
+            "modified": "2022-09-10T19:20:31.284Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"email\": \"lele@gmail.com\",\n  \"password\": \"dena\"\n}",
+                "form": []
+            },
+            "tests": [
+                {
+                    "type": "res-code",
+                    "custom": "",
+                    "action": "equal",
+                    "value": "200"
+                },
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "istype",
+                    "value": "string"
+                }
+            ]
+        },
+        {
+            "_id": "67b05658-baad-4abd-bc96-661763a1d5d3",
+            "colId": "d568c029-4acf-4d2d-b53c-ad39612a873c",
+            "containerId": "",
+            "name": "post signin unauthorized",
+            "url": "{{url}}/signin",
+            "method": "POST",
+            "sortNum": 25000,
+            "created": "2022-09-10T22:10:46.338Z",
+            "modified": "2022-09-10T22:11:19.970Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"email\": \"adnan@google.com\",\n  \"password\": \"lele\"\n}",
+                "form": []
+            },
+            "tests": [
+                {
+                    "type": "res-code",
+                    "custom": "",
+                    "action": "equal",
+                    "value": "401"
+                }
+            ]
+        },
+        {
+            "_id": "9ccb574a-948c-4e02-917f-1da9386f6bf9",
+            "colId": "d568c029-4acf-4d2d-b53c-ad39612a873c",
+            "containerId": "",
+            "name": "post signin wrong data",
+            "url": "{{url}}/signin",
+            "method": "POST",
+            "sortNum": 27500,
+            "created": "2022-09-10T22:10:11.204Z",
+            "modified": "2022-09-10T22:11:22.538Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"email\": \"\",\n  \"password\": \"keke\"\n}",
+                "form": []
+            },
+            "tests": [
+                {
+                    "type": "res-code",
+                    "custom": "",
+                    "action": "equal",
+                    "value": "422"
+                }
+            ]
+        },
+        {
+            "_id": "84cb56e2-657e-411c-bb31-2657d53039e9",
+            "colId": "d568c029-4acf-4d2d-b53c-ad39612a873c",
+            "containerId": "",
+            "name": "post card",
+            "url": "{{url}}/card",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2022-09-10T19:20:47.520Z",
+            "modified": "2022-09-10T22:06:52.505Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJhZG5hbkBnb29nbGUuY29tIiwiaWF0IjoxNjYyNzc1NDM2LCJleHAiOjE2NjMzODAyMzZ9.jmnfRZUNvspyNo6kcGZdZfJkobYbltortxLA34HJWrM"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"title\": \"cartonhoso\",\n  \"number\": \"12345678\",\n  \"name\": \"Adnan M Bezerra\",\n  \"expirationDate\": \"12/30\",\n  \"isVirtual\": false,\n  \"type\": \"both\",\n  \"CVC\": \"123\",\n  \"password\": \"123456\"\n}",
+                "form": []
+            },
+            "tests": [
+                {
+                    "type": "res-code",
+                    "custom": "",
+                    "action": "equal",
+                    "value": "201"
+                }
+            ]
+        },
+        {
+            "_id": "ce17c6b6-e705-4ab7-804e-e5b68dbb88cd",
+            "colId": "d568c029-4acf-4d2d-b53c-ad39612a873c",
+            "containerId": "",
+            "name": "post card repeated",
+            "url": "{{url}}/card",
+            "method": "POST",
+            "sortNum": 30625,
+            "created": "2022-09-10T21:56:58.872Z",
+            "modified": "2022-09-10T23:00:41.669Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJhZG5hbkBnb29nbGUuY29tIiwiaWF0IjoxNjYyNzc1NDM2LCJleHAiOjE2NjMzODAyMzZ9.jmnfRZUNvspyNo6kcGZdZfJkobYbltortxLA34HJWrM"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"title\": \"cartonhoso\",\n  \"number\": \"12345678\",\n  \"name\": \"Adnan M Bezerra\",\n  \"expirationDate\": \"12/30\",\n  \"isVirtual\": false,\n  \"type\": \"both\",\n  \"CVC\": \"123\",\n  \"password\": \"123456\"\n}",
+                "form": []
+            },
+            "tests": [
+                {
+                    "type": "res-code",
+                    "custom": "",
+                    "action": "equal",
+                    "value": "400"
+                }
+            ]
+        },
+        {
+            "_id": "dc36b17a-fedb-45e8-a70c-0463409edfe3",
+            "colId": "d568c029-4acf-4d2d-b53c-ad39612a873c",
+            "containerId": "",
+            "name": "post card with invalid data",
+            "url": "{{url}}/card",
+            "method": "POST",
+            "sortNum": 30937.5,
+            "created": "2022-09-10T22:05:51.971Z",
+            "modified": "2022-09-10T23:00:48.084Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJhZG5hbkBnb29nbGUuY29tIiwiaWF0IjoxNjYyNzc1NDM2LCJleHAiOjE2NjMzODAyMzZ9.jmnfRZUNvspyNo6kcGZdZfJkobYbltortxLA34HJWrM"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"title\": \"cartonhoso\",\n  \"number\": \"\",\n  \"name\": \"Adnan M Bezerra\",\n  \"expirationDate\": \"12/30\",\n  \"isVirtual\": false,\n  \"type\": \"both\",\n  \"password\": \"123456\"\n}",
+                "form": []
+            },
+            "tests": [
+                {
+                    "type": "res-code",
+                    "custom": "",
+                    "action": "equal",
+                    "value": "422"
+                }
+            ]
+        },
+        {
+            "_id": "0ad421ea-b082-4811-880a-10734a072057",
+            "colId": "d568c029-4acf-4d2d-b53c-ad39612a873c",
+            "containerId": "",
+            "name": "post wifi",
+            "url": "{{url}}/wifi",
+            "method": "POST",
+            "sortNum": 31250,
+            "created": "2022-09-10T23:00:13.629Z",
+            "modified": "2022-09-10T23:01:47.996Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJhZG5hbkBnb29nbGUuY29tIiwiaWF0IjoxNjYyNzc1NDM2LCJleHAiOjE2NjMzODAyMzZ9.jmnfRZUNvspyNo6kcGZdZfJkobYbltortxLA34HJWrM"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"title\": \"aifai\",\n  \"password\": \"adena\",\n  \"name\": \"WiFi du Teste\"\n}",
+                "form": []
+            },
+            "tests": [
+                {
+                    "type": "res-code",
+                    "custom": "",
+                    "action": "equal",
+                    "value": "201"
+                }
+            ]
+        },
+        {
+            "_id": "ddba60e4-de44-4243-ab69-91380997cfb4",
+            "colId": "d568c029-4acf-4d2d-b53c-ad39612a873c",
+            "containerId": "",
+            "name": "post wifi repeated",
+            "url": "{{url}}/wifi",
+            "method": "POST",
+            "sortNum": 31875,
+            "created": "2022-09-10T23:00:22.523Z",
+            "modified": "2022-09-10T23:05:06.876Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJhZG5hbkBnb29nbGUuY29tIiwiaWF0IjoxNjYyNzc1NDM2LCJleHAiOjE2NjMzODAyMzZ9.jmnfRZUNvspyNo6kcGZdZfJkobYbltortxLA34HJWrM"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"title\": \"aifai\",\n  \"password\": \"adena\",\n  \"name\": \"WiFi du Teste\"\n}",
+                "form": []
+            },
+            "tests": [
+                {
+                    "type": "res-code",
+                    "custom": "",
+                    "action": "equal",
+                    "value": "400"
+                }
+            ]
+        },
+        {
+            "_id": "dcfb04a4-48fd-4a96-b7a0-3c7bef7b9772",
+            "colId": "d568c029-4acf-4d2d-b53c-ad39612a873c",
+            "containerId": "",
+            "name": "post wifi with invalid data",
+            "url": "{{url}}/card",
+            "method": "POST",
+            "sortNum": 32187.5,
+            "created": "2022-09-10T23:00:24.779Z",
+            "modified": "2022-09-10T23:08:35.764Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJhZG5hbkBnb29nbGUuY29tIiwiaWF0IjoxNjYyNzc1NDM2LCJleHAiOjE2NjMzODAyMzZ9.jmnfRZUNvspyNo6kcGZdZfJkobYbltortxLA34HJWrM"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"title\": \"cartonhoso\",\n  \"number\": \"\",\n  \"name\": \"Adnan M Bezerra\",\n  \"expirationDate\": \"12/30\",\n  \"isVirtual\": false,\n  \"type\": \"both\",\n  \"password\": \"123456\"\n}",
+                "form": []
+            },
+            "tests": [
+                {
+                    "type": "res-code",
+                    "custom": "",
+                    "action": "equal",
+                    "value": "422"
+                }
+            ]
+        },
+        {
+            "_id": "fcd30002-125e-4527-be7b-905a6b01f909",
+            "colId": "d568c029-4acf-4d2d-b53c-ad39612a873c",
+            "containerId": "",
+            "name": "post safeNote",
+            "url": "{{url}}/safeNote",
+            "method": "POST",
+            "sortNum": 32500,
+            "created": "2022-09-10T23:00:11.158Z",
+            "modified": "2022-09-10T23:02:19.251Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJhZG5hbkBnb29nbGUuY29tIiwiaWF0IjoxNjYyNzc1NDM2LCJleHAiOjE2NjMzODAyMzZ9.jmnfRZUNvspyNo6kcGZdZfJkobYbltortxLA34HJWrM"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"title\": \"Notação\",\n  \"nota\": \"Que aqui fique anotado para sempre.\"\n}",
+                "form": []
+            },
+            "tests": [
+                {
+                    "type": "res-code",
+                    "custom": "",
+                    "action": "equal",
+                    "value": "201"
+                }
+            ]
+        },
+        {
+            "_id": "fe1a27ee-e5b6-4f06-9f04-a3c4a8beaaa8",
+            "colId": "d568c029-4acf-4d2d-b53c-ad39612a873c",
+            "containerId": "",
+            "name": "post safeNote repeated",
+            "url": "{{url}}/safeNote",
+            "method": "POST",
+            "sortNum": 33750,
+            "created": "2022-09-10T23:00:20.908Z",
+            "modified": "2022-09-10T23:05:12.180Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJhZG5hbkBnb29nbGUuY29tIiwiaWF0IjoxNjYyNzc1NDM2LCJleHAiOjE2NjMzODAyMzZ9.jmnfRZUNvspyNo6kcGZdZfJkobYbltortxLA34HJWrM"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"title\": \"Notação\",\n  \"nota\": \"Que aqui fique anotado para sempre.\"\n}",
+                "form": []
+            },
+            "tests": [
+                {
+                    "type": "res-code",
+                    "custom": "",
+                    "action": "equal",
+                    "value": "400"
+                }
+            ]
+        },
+        {
+            "_id": "a8e2ce1b-50d4-4a56-9259-73d8e84b042a",
+            "colId": "d568c029-4acf-4d2d-b53c-ad39612a873c",
+            "containerId": "",
+            "name": "post safeNote with invalid data",
+            "url": "{{url}}/safeNote",
+            "method": "POST",
+            "sortNum": 34375,
+            "created": "2022-09-10T23:00:28.835Z",
+            "modified": "2022-09-10T23:08:19.909Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJhZG5hbkBnb29nbGUuY29tIiwiaWF0IjoxNjYyNzc1NDM2LCJleHAiOjE2NjMzODAyMzZ9.jmnfRZUNvspyNo6kcGZdZfJkobYbltortxLA34HJWrM"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"title\": \"cartonhoso\",\n  \"number\": \"\",\n  \"name\": \"Adnan M Bezerra\",\n  \"expirationDate\": \"12/30\",\n  \"isVirtual\": false,\n  \"type\": \"both\",\n  \"password\": \"123456\"\n}",
+                "form": []
+            },
+            "tests": [
+                {
+                    "type": "res-code",
+                    "custom": "",
+                    "action": "equal",
+                    "value": "422"
+                }
+            ]
+        },
+        {
+            "_id": "1e78ad51-9119-42d9-a2e5-924d2128d0ff",
+            "colId": "d568c029-4acf-4d2d-b53c-ad39612a873c",
+            "containerId": "",
+            "name": "post credential",
+            "url": "{{url}}/credential",
+            "method": "POST",
+            "sortNum": 35000,
+            "created": "2022-09-10T23:00:08.158Z",
+            "modified": "2022-09-10T23:03:30.903Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJhZG5hbkBnb29nbGUuY29tIiwiaWF0IjoxNjYyNzc1NDM2LCJleHAiOjE2NjMzODAyMzZ9.jmnfRZUNvspyNo6kcGZdZfJkobYbltortxLA34HJWrM"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"url\": \"https://google.com\",\n  \"username\": \"adnan\",\n  \"password\": \"senha\",\n  \"title\": \"login da gloog\"\n}",
+                "form": []
+            },
+            "tests": [
+                {
+                    "type": "res-code",
+                    "custom": "",
+                    "action": "equal",
+                    "value": "201"
+                }
+            ]
+        },
+        {
+            "_id": "9561d083-5803-481f-b042-3b6c0bfc01b6",
+            "colId": "d568c029-4acf-4d2d-b53c-ad39612a873c",
+            "containerId": "",
+            "name": "post credential repeated",
+            "url": "{{url}}/credential",
+            "method": "POST",
+            "sortNum": 50000,
+            "created": "2022-09-10T23:00:18.988Z",
+            "modified": "2022-09-10T23:05:27.694Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJhZG5hbkBnb29nbGUuY29tIiwiaWF0IjoxNjYyNzc1NDM2LCJleHAiOjE2NjMzODAyMzZ9.jmnfRZUNvspyNo6kcGZdZfJkobYbltortxLA34HJWrM"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"url\": \"https://google.com\",\n  \"username\": \"adnan\",\n  \"password\": \"senha\",\n  \"title\": \"login da gloog\"\n}",
+                "form": []
+            },
+            "tests": [
+                {
+                    "type": "res-code",
+                    "custom": "",
+                    "action": "equal",
+                    "value": "400"
+                }
+            ]
+        },
+        {
+            "_id": "17ef8cde-e8bf-420b-98bb-4ab45b40cb3d",
+            "colId": "d568c029-4acf-4d2d-b53c-ad39612a873c",
+            "containerId": "",
+            "name": "post credential with invalid data",
+            "url": "{{url}}/card",
+            "method": "POST",
+            "sortNum": 70000,
+            "created": "2022-09-10T23:00:26.923Z",
+            "modified": "2022-09-10T23:00:26.923Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJhZG5hbkBnb29nbGUuY29tIiwiaWF0IjoxNjYyNzc1NDM2LCJleHAiOjE2NjMzODAyMzZ9.jmnfRZUNvspyNo6kcGZdZfJkobYbltortxLA34HJWrM"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"title\": \"cartonhoso\",\n  \"number\": \"\",\n  \"name\": \"Adnan M Bezerra\",\n  \"expirationDate\": \"12/30\",\n  \"isVirtual\": false,\n  \"type\": \"both\",\n  \"password\": \"123456\"\n}",
+                "form": []
+            },
+            "tests": [
+                {
+                    "type": "res-code",
+                    "custom": "",
+                    "action": "equal",
+                    "value": "422"
+                }
+            ]
+        },
+        {
+            "_id": "b529ca29-8d37-4e27-bfee-450059350e27",
+            "colId": "d568c029-4acf-4d2d-b53c-ad39612a873c",
+            "containerId": "",
+            "name": "get card",
+            "url": "{{url}}/cards",
+            "method": "GET",
+            "sortNum": 100000,
+            "created": "2022-09-10T22:11:56.646Z",
+            "modified": "2022-09-10T22:13:13.100Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJhZG5hbkBnb29nbGUuY29tIiwiaWF0IjoxNjYyNzc1NDM2LCJleHAiOjE2NjMzODAyMzZ9.jmnfRZUNvspyNo6kcGZdZfJkobYbltortxLA34HJWrM"
+                }
+            ],
+            "params": [],
+            "tests": [
+                {
+                    "type": "res-code",
+                    "custom": "",
+                    "action": "equal",
+                    "value": "200"
+                },
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "istype",
+                    "value": "array"
+                }
+            ]
+        },
+        {
+            "_id": "46b18804-34d9-437e-9cea-39db920cb472",
+            "colId": "d568c029-4acf-4d2d-b53c-ad39612a873c",
+            "containerId": "",
+            "name": "get card with query ",
+            "url": "{{url}}/cards?id=1",
+            "method": "GET",
+            "sortNum": 100625,
+            "created": "2022-09-10T22:47:49.863Z",
+            "modified": "2022-09-10T22:51:29.753Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJhZG5hbkBnb29nbGUuY29tIiwiaWF0IjoxNjYyNzc1NDM2LCJleHAiOjE2NjMzODAyMzZ9.jmnfRZUNvspyNo6kcGZdZfJkobYbltortxLA34HJWrM"
+                }
+            ],
+            "params": [
+                {
+                    "name": "id",
+                    "value": "1",
+                    "isPath": false
+                }
+            ],
+            "tests": [
+                {
+                    "type": "res-code",
+                    "custom": "",
+                    "action": "equal",
+                    "value": "200"
+                },
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "istype",
+                    "value": "object"
+                }
+            ]
+        },
+        {
+            "_id": "7330faf7-8c48-434b-b67f-01086644ada5",
+            "colId": "d568c029-4acf-4d2d-b53c-ad39612a873c",
+            "containerId": "",
+            "name": "get wifis",
+            "url": "{{url}}/wifis",
+            "method": "GET",
+            "sortNum": 101250,
+            "created": "2022-09-10T22:47:43.400Z",
+            "modified": "2022-09-10T22:48:09.901Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJhZG5hbkBnb29nbGUuY29tIiwiaWF0IjoxNjYyNzc1NDM2LCJleHAiOjE2NjMzODAyMzZ9.jmnfRZUNvspyNo6kcGZdZfJkobYbltortxLA34HJWrM"
+                }
+            ],
+            "params": [],
+            "tests": [
+                {
+                    "type": "res-code",
+                    "custom": "",
+                    "action": "equal",
+                    "value": "200"
+                },
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "istype",
+                    "value": "array"
+                }
+            ]
+        },
+        {
+            "_id": "6e2844a3-4b96-47e6-9402-995ae6d7ba58",
+            "colId": "d568c029-4acf-4d2d-b53c-ad39612a873c",
+            "containerId": "",
+            "name": "get wifis with query",
+            "url": "{{url}}/wifis?id=1",
+            "method": "GET",
+            "sortNum": 101875,
+            "created": "2022-09-10T22:13:17.451Z",
+            "modified": "2022-09-10T22:50:19.433Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJhZG5hbkBnb29nbGUuY29tIiwiaWF0IjoxNjYyNzc1NDM2LCJleHAiOjE2NjMzODAyMzZ9.jmnfRZUNvspyNo6kcGZdZfJkobYbltortxLA34HJWrM"
+                }
+            ],
+            "params": [
+                {
+                    "name": "id",
+                    "value": "1",
+                    "isPath": false
+                }
+            ],
+            "tests": [
+                {
+                    "type": "res-code",
+                    "custom": "",
+                    "action": "equal",
+                    "value": "200"
+                },
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "istype",
+                    "value": "object"
+                }
+            ]
+        },
+        {
+            "_id": "ca6d6342-0f84-48aa-bf59-9cda5e933c94",
+            "colId": "d568c029-4acf-4d2d-b53c-ad39612a873c",
+            "containerId": "",
+            "name": "get safeNotes",
+            "url": "{{url}}/safeNotes",
+            "method": "GET",
+            "sortNum": 102500,
+            "created": "2022-09-10T22:47:41.432Z",
+            "modified": "2022-09-10T22:48:18.541Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJhZG5hbkBnb29nbGUuY29tIiwiaWF0IjoxNjYyNzc1NDM2LCJleHAiOjE2NjMzODAyMzZ9.jmnfRZUNvspyNo6kcGZdZfJkobYbltortxLA34HJWrM"
+                }
+            ],
+            "params": [],
+            "tests": [
+                {
+                    "type": "res-code",
+                    "custom": "",
+                    "action": "equal",
+                    "value": "200"
+                },
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "istype",
+                    "value": "array"
+                }
+            ]
+        },
+        {
+            "_id": "84b09f0d-8ff5-49b8-8977-cc34977a8e4f",
+            "colId": "d568c029-4acf-4d2d-b53c-ad39612a873c",
+            "containerId": "",
+            "name": "get safeNote with query",
+            "url": "{{url}}/safeNote?id=1",
+            "method": "GET",
+            "sortNum": 103750,
+            "created": "2022-09-10T22:47:48.095Z",
+            "modified": "2022-09-10T22:51:21.127Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJhZG5hbkBnb29nbGUuY29tIiwiaWF0IjoxNjYyNzc1NDM2LCJleHAiOjE2NjMzODAyMzZ9.jmnfRZUNvspyNo6kcGZdZfJkobYbltortxLA34HJWrM"
+                }
+            ],
+            "params": [
+                {
+                    "name": "id",
+                    "value": "1",
+                    "isPath": false
+                }
+            ],
+            "tests": [
+                {
+                    "type": "res-code",
+                    "custom": "",
+                    "action": "equal",
+                    "value": "200"
+                },
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "istype",
+                    "value": "object"
+                }
+            ]
+        },
+        {
+            "_id": "de622236-8197-4fe0-aa66-a2b932f12304",
+            "colId": "d568c029-4acf-4d2d-b53c-ad39612a873c",
+            "containerId": "",
+            "name": "get credentials",
+            "url": "{{url}}/credentials",
+            "method": "GET",
+            "sortNum": 105000,
+            "created": "2022-09-10T22:47:39.599Z",
+            "modified": "2022-09-10T22:48:27.341Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJhZG5hbkBnb29nbGUuY29tIiwiaWF0IjoxNjYyNzc1NDM2LCJleHAiOjE2NjMzODAyMzZ9.jmnfRZUNvspyNo6kcGZdZfJkobYbltortxLA34HJWrM"
+                }
+            ],
+            "params": [],
+            "tests": [
+                {
+                    "type": "res-code",
+                    "custom": "",
+                    "action": "equal",
+                    "value": "200"
+                },
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "istype",
+                    "value": "array"
+                }
+            ]
+        },
+        {
+            "_id": "ac3e71fd-fecd-4618-8495-ef03d7ce3ab8",
+            "colId": "d568c029-4acf-4d2d-b53c-ad39612a873c",
+            "containerId": "",
+            "name": "delete card",
+            "url": "{{url}}/card/1",
+            "method": "DELETE",
+            "sortNum": 110000,
+            "created": "2022-09-10T22:15:55.662Z",
+            "modified": "2022-09-10T22:16:30.197Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJhZG5hbkBnb29nbGUuY29tIiwiaWF0IjoxNjYyNzc1NDM2LCJleHAiOjE2NjMzODAyMzZ9.jmnfRZUNvspyNo6kcGZdZfJkobYbltortxLA34HJWrM"
+                }
+            ],
+            "params": [],
+            "tests": [
+                {
+                    "type": "res-code",
+                    "custom": "",
+                    "action": "equal",
+                    "value": "200"
+                }
+            ]
+        },
+        {
+            "_id": "a77a47be-9dcd-47e5-b26e-aa22340257c8",
+            "colId": "d568c029-4acf-4d2d-b53c-ad39612a873c",
+            "containerId": "",
+            "name": "get card with invalid query",
+            "url": "{{url}}/cards?id=3",
+            "method": "GET",
+            "sortNum": 110000,
+            "created": "2022-09-10T22:16:39.531Z",
+            "modified": "2022-09-10T22:17:07.810Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJhZG5hbkBnb29nbGUuY29tIiwiaWF0IjoxNjYyNzc1NDM2LCJleHAiOjE2NjMzODAyMzZ9.jmnfRZUNvspyNo6kcGZdZfJkobYbltortxLA34HJWrM"
+                }
+            ],
+            "params": [
+                {
+                    "name": "id",
+                    "value": "3",
+                    "isPath": false
+                }
+            ],
+            "tests": [
+                {
+                    "type": "res-code",
+                    "custom": "",
+                    "action": "equal",
+                    "value": "404"
+                },
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "istype",
+                    "value": "object"
+                }
+            ]
+        },
+        {
+            "_id": "ad615dfb-15ef-433e-a738-4d2e4fd643a4",
+            "colId": "d568c029-4acf-4d2d-b53c-ad39612a873c",
+            "containerId": "",
+            "name": "get credential with query",
+            "url": "{{url}}/credentials?id=1",
+            "method": "GET",
+            "sortNum": 110000,
+            "created": "2022-09-10T22:47:45.503Z",
+            "modified": "2022-09-10T22:51:12.332Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJhZG5hbkBnb29nbGUuY29tIiwiaWF0IjoxNjYyNzc1NDM2LCJleHAiOjE2NjMzODAyMzZ9.jmnfRZUNvspyNo6kcGZdZfJkobYbltortxLA34HJWrM"
+                }
+            ],
+            "params": [
+                {
+                    "name": "id",
+                    "value": "1",
+                    "isPath": false
+                }
+            ],
+            "tests": [
+                {
+                    "type": "res-code",
+                    "custom": "",
+                    "action": "equal",
+                    "value": "200"
+                },
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "istype",
+                    "value": "object"
+                }
+            ]
+        },
+        {
+            "_id": "e59fa4a8-4df6-41a9-b013-a2e2ebaff393",
+            "colId": "d568c029-4acf-4d2d-b53c-ad39612a873c",
+            "containerId": "",
+            "name": "get card with invalid query Copy",
+            "url": "{{url}}/cards?id=3",
+            "method": "GET",
+            "sortNum": 110000,
+            "created": "2022-09-10T22:47:52.383Z",
+            "modified": "2022-09-10T22:47:52.383Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJhZG5hbkBnb29nbGUuY29tIiwiaWF0IjoxNjYyNzc1NDM2LCJleHAiOjE2NjMzODAyMzZ9.jmnfRZUNvspyNo6kcGZdZfJkobYbltortxLA34HJWrM"
+                }
+            ],
+            "params": [
+                {
+                    "name": "id",
+                    "value": "3",
+                    "isPath": false
+                }
+            ],
+            "tests": [
+                {
+                    "type": "res-code",
+                    "custom": "",
+                    "action": "equal",
+                    "value": "404"
+                },
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "istype",
+                    "value": "object"
+                }
+            ]
+        },
+        {
+            "_id": "c4724fb6-75b1-4959-affd-88a9fab07475",
+            "colId": "d568c029-4acf-4d2d-b53c-ad39612a873c",
+            "containerId": "",
+            "name": "get card with invalid query Copy Copy",
+            "url": "{{url}}/cards?id=3",
+            "method": "GET",
+            "sortNum": 110000,
+            "created": "2022-09-10T22:47:55.647Z",
+            "modified": "2022-09-10T22:47:55.647Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJhZG5hbkBnb29nbGUuY29tIiwiaWF0IjoxNjYyNzc1NDM2LCJleHAiOjE2NjMzODAyMzZ9.jmnfRZUNvspyNo6kcGZdZfJkobYbltortxLA34HJWrM"
+                }
+            ],
+            "params": [
+                {
+                    "name": "id",
+                    "value": "3",
+                    "isPath": false
+                }
+            ],
+            "tests": [
+                {
+                    "type": "res-code",
+                    "custom": "",
+                    "action": "equal",
+                    "value": "404"
+                },
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "istype",
+                    "value": "object"
+                }
+            ]
+        },
+        {
+            "_id": "29086b2f-8368-411c-99ad-b25b014dd2a1",
+            "colId": "d568c029-4acf-4d2d-b53c-ad39612a873c",
+            "containerId": "",
+            "name": "get card with invalid query Copy Copy Copy",
+            "url": "{{url}}/cards?id=3",
+            "method": "GET",
+            "sortNum": 110000,
+            "created": "2022-09-10T22:47:58.542Z",
+            "modified": "2022-09-10T22:47:58.542Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJhZG5hbkBnb29nbGUuY29tIiwiaWF0IjoxNjYyNzc1NDM2LCJleHAiOjE2NjMzODAyMzZ9.jmnfRZUNvspyNo6kcGZdZfJkobYbltortxLA34HJWrM"
+                }
+            ],
+            "params": [
+                {
+                    "name": "id",
+                    "value": "3",
+                    "isPath": false
+                }
+            ],
+            "tests": [
+                {
+                    "type": "res-code",
+                    "custom": "",
+                    "action": "equal",
+                    "value": "404"
+                },
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "istype",
+                    "value": "object"
+                }
+            ]
+        },
+        {
+            "_id": "fad97e49-f8a1-4a9c-904a-8f57110f1117",
+            "colId": "d568c029-4acf-4d2d-b53c-ad39612a873c",
+            "containerId": "",
+            "name": "delete invalid card",
+            "url": "{{url}}/card/4",
+            "method": "DELETE",
+            "sortNum": 110019.6,
+            "created": "2022-09-10T22:16:33.635Z",
+            "modified": "2022-09-10T22:23:09.820Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJhZG5hbkBnb29nbGUuY29tIiwiaWF0IjoxNjYyNzc1NDM2LCJleHAiOjE2NjMzODAyMzZ9.jmnfRZUNvspyNo6kcGZdZfJkobYbltortxLA34HJWrM"
+                }
+            ],
+            "params": [],
+            "tests": [
+                {
+                    "type": "res-code",
+                    "custom": "",
+                    "action": "equal",
+                    "value": "404"
+                }
+            ]
+        },
+        {
+            "_id": "e3cbc240-efe6-4e02-8e8d-448b7ff4a88f",
+            "colId": "d568c029-4acf-4d2d-b53c-ad39612a873c",
+            "containerId": "",
+            "name": "delete wifi",
+            "url": "{{url}}/wifi/1",
+            "method": "DELETE",
+            "sortNum": 110039.1,
+            "created": "2022-09-10T22:23:07.374Z",
+            "modified": "2022-09-10T22:39:38.717Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJhZG5hbkBnb29nbGUuY29tIiwiaWF0IjoxNjYyNzc1NDM2LCJleHAiOjE2NjMzODAyMzZ9.jmnfRZUNvspyNo6kcGZdZfJkobYbltortxLA34HJWrM"
+                }
+            ],
+            "params": [],
+            "tests": [
+                {
+                    "type": "res-code",
+                    "custom": "",
+                    "action": "equal",
+                    "value": "200"
+                }
+            ]
+        },
+        {
+            "_id": "a87f7863-d5ec-4ea2-82bd-df1dfcab559b",
+            "colId": "d568c029-4acf-4d2d-b53c-ad39612a873c",
+            "containerId": "",
+            "name": "delete invalid wifi",
+            "url": "{{url}}/card/4",
+            "method": "DELETE",
+            "sortNum": 110058.6,
+            "created": "2022-09-10T22:38:46.340Z",
+            "modified": "2022-09-10T22:40:58.611Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJhZG5hbkBnb29nbGUuY29tIiwiaWF0IjoxNjYyNzc1NDM2LCJleHAiOjE2NjMzODAyMzZ9.jmnfRZUNvspyNo6kcGZdZfJkobYbltortxLA34HJWrM"
+                }
+            ],
+            "params": [],
+            "tests": [
+                {
+                    "type": "res-code",
+                    "custom": "",
+                    "action": "equal",
+                    "value": "404"
+                }
+            ]
+        },
+        {
+            "_id": "fc14dcca-0720-486d-9ef9-3560bfc2532e",
+            "colId": "d568c029-4acf-4d2d-b53c-ad39612a873c",
+            "containerId": "",
+            "name": "delete safeNote",
+            "url": "{{url}}/safeNote/1",
+            "method": "DELETE",
+            "sortNum": 110078.1,
+            "created": "2022-09-10T22:23:05.853Z",
+            "modified": "2022-09-10T22:39:48.205Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJhZG5hbkBnb29nbGUuY29tIiwiaWF0IjoxNjYyNzc1NDM2LCJleHAiOjE2NjMzODAyMzZ9.jmnfRZUNvspyNo6kcGZdZfJkobYbltortxLA34HJWrM"
+                }
+            ],
+            "params": [],
+            "tests": [
+                {
+                    "type": "res-code",
+                    "custom": "",
+                    "action": "equal",
+                    "value": "200"
+                }
+            ]
+        },
+        {
+            "_id": "4b154bdd-f777-4a68-9484-4e744e8e5212",
+            "colId": "d568c029-4acf-4d2d-b53c-ad39612a873c",
+            "containerId": "",
+            "name": "delete invalid safeNote",
+            "url": "{{url}}/safeNote/4",
+            "method": "DELETE",
+            "sortNum": 110156.3,
+            "created": "2022-09-10T22:23:04.179Z",
+            "modified": "2022-09-10T22:41:28.500Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJhZG5hbkBnb29nbGUuY29tIiwiaWF0IjoxNjYyNzc1NDM2LCJleHAiOjE2NjMzODAyMzZ9.jmnfRZUNvspyNo6kcGZdZfJkobYbltortxLA34HJWrM"
+                }
+            ],
+            "params": [],
+            "tests": [
+                {
+                    "type": "res-code",
+                    "custom": "",
+                    "action": "equal",
+                    "value": "404"
+                }
+            ]
+        },
+        {
+            "_id": "8f7afa43-c901-427c-8c91-6d45898dfdb8",
+            "colId": "d568c029-4acf-4d2d-b53c-ad39612a873c",
+            "containerId": "",
+            "name": "delete credential",
+            "url": "{{url}}/credentials/1",
+            "method": "DELETE",
+            "sortNum": 110312.5,
+            "created": "2022-09-10T22:23:02.498Z",
+            "modified": "2022-09-10T22:39:58.307Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJhZG5hbkBnb29nbGUuY29tIiwiaWF0IjoxNjYyNzc1NDM2LCJleHAiOjE2NjMzODAyMzZ9.jmnfRZUNvspyNo6kcGZdZfJkobYbltortxLA34HJWrM"
+                }
+            ],
+            "params": [],
+            "tests": [
+                {
+                    "type": "res-code",
+                    "custom": "",
+                    "action": "equal",
+                    "value": "200"
+                }
+            ]
+        },
+        {
+            "_id": "b7f958a1-35f3-4f76-952d-fa949ae584c8",
+            "colId": "d568c029-4acf-4d2d-b53c-ad39612a873c",
+            "containerId": "",
+            "name": "delete invalid credential",
+            "url": "{{url}}/credential/4",
+            "method": "DELETE",
+            "sortNum": 110625,
+            "created": "2022-09-10T22:23:00.648Z",
+            "modified": "2022-09-10T22:41:55.208Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJhZG5hbkBnb29nbGUuY29tIiwiaWF0IjoxNjYyNzc1NDM2LCJleHAiOjE2NjMzODAyMzZ9.jmnfRZUNvspyNo6kcGZdZfJkobYbltortxLA34HJWrM"
+                }
+            ],
+            "params": [],
+            "tests": [
+                {
+                    "type": "res-code",
+                    "custom": "",
+                    "action": "equal",
+                    "value": "404"
+                }
+            ]
+        }
+    ],
+    "settings": {}
+}
