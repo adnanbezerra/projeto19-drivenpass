@@ -10,7 +10,7 @@ export async function createNewCredential(credentialInfo: NewCredential) {
 export async function getCredentials(queryUserId: number) {
     const credentials = await client.credentials.findMany({ where: { userId: queryUserId } });
 
-    if (!credentials) throw { type: "error_noCredentials", message: "You have no credentials yet!" };
+    if (!credentials.length) throw { type: "error_noCredentials", message: "You have no credentials yet!" };
     return credentials;
 }
 

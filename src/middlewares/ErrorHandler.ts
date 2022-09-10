@@ -28,4 +28,13 @@ export default async function errorHandler(error: any, req: Request, res: Respon
     if (error.type === "error_credential_notYours") {
         return res.status(401).send({ message: error.message });
     }
+    if(error.type === "error_safeNote_notYours") {
+        return res.status(401).send({ message: error.message });
+    }
+    if (error.type === "error_invalidSafeNoteId") {
+        return res.status(404).send({ message: error.message });
+    }
+    if (error.type === "error_noSafeNotes") {
+        return res.status(404).send({ message: error.message });
+    }
 }

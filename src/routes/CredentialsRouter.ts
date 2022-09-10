@@ -7,5 +7,5 @@ import { CredentialSchema } from "../schemas/CredentialSchema.js";
 export const CredentialsRouter = Router();
 
 CredentialsRouter.post('/credential', validateSchema(CredentialSchema), ValidateToken, postCredential);
-CredentialsRouter.get('/credential', ValidateToken, getCredential);
+CredentialsRouter.get('/credentials', ValidateToken, getCredential);
 CredentialsRouter.delete('/credential/:id', ValidateToken, deleteCredential);
